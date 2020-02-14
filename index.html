@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weather This Movie or Not</title>
-</head>
-<body>
-    <div> Hey guys</div>
-    
-</body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Weather This Movie or Not
+      </h1>
+      <div class="h-100">
+          <div class="col-sm-4 bg-secondary">
+              <h2> Search for a movie!</h2>
+              <input type="text" id="movie-search" placeholder="Enter movie name">
+              <button id="search-button"><i class="fas fa-search"></i></button>
+              <ul id="movies"></ul>
+          </div>
+          <div class="col-sm-7">
+              <main id="content-main"></main>
+          </div>
+      </div>
+    </div>
+  </section>
+  </body>
 </html>
