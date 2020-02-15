@@ -97,7 +97,7 @@ $.ajax({
 
 
 
-getLocation();
+// getLocation();
 
 function getLocation() { 
 
@@ -128,6 +128,7 @@ function getLocation() {
             }
 
             console.log(response);
+            console.log(weather);
         })
 
     }
