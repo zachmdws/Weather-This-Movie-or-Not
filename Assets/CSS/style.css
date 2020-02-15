@@ -1,0 +1,17 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+input {
+    font-size: 1.5em;
+    margin-left: .75rem;
+}
+
+button {
+    padding: .5rem;
+    background-color: grey;
+    border-radius: 6px;
+    font-size: .75em;
+}
