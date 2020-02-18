@@ -1,66 +1,3 @@
-var cloudy = [14];
-var key = "cee31e4e0a700ed1066486f86f4ae8b4";
-var queryURL = "https://api.themoviedb.org/3/discover/movie?api_key=" + key + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=" + cloudy
-console.log(queryURL);
-
-$.ajax({
-    url: queryURL,
-    method: "GET"
-}).then(function (response) {
-    console.log(response);
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // getLocation();
 
@@ -96,6 +33,13 @@ function getWeather(position) {
         console.log(weather);
     })
 
+function getLocation() { 
+
+    if(navigator.geolocation) { 
+        
+        navigator.geolocation.getCurrentPosition(getWeather);
+
+    }
 }
 
 getMovieImages();
@@ -131,11 +75,25 @@ function getMovieImages() {
 
             var carouselItems = $("<div class= 'item-" + i + "'></div>");
             var carouselImages = $("<img class='img-" + i + "' src='" + finishedP + "'></img>");
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            
+            for (var i = 0; i < 20; i++) {
+                var posterP = (response.results[i].poster_path);
+                var mainL = ("https://image.tmdb.org/t/p/original/");
+                var movieImages = [];
+                var finishedP = mainL + posterP;
 
             console.log()
 
             carouselDemoDiv.append(carouselItems);
             carouselItems.append(carouselImages);
+                $(".img-" + i).attr("src", finishedP);
+                
+                
 
 
         }
@@ -145,4 +103,62 @@ function getMovieImages() {
         });
     })
 };
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function weatherLocation(location){
+    var APIkey = "4971bbf933e132e86212d1bc1c100553";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q="+location+"&appid="+APIkey;
+    $.ajax({
+        url:queryURL,
+        method: "GET"
+    }).then(function(response){ 
+        console.log(response);
+        
+    })
+        
+
+}
+$("#search-button").on("click", function(event){
+    event.stopPropagation();
+    
+    if ($("#movie-search").val() === "") {
+        return;
+      } else {
+        var location = $("#movie-search").val().trim();
+        console.log(location);
+      }
+      weatherLocation(location)
+      $("#movie-search").val("");
+})
 
