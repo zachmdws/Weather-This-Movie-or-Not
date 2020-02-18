@@ -105,6 +105,7 @@ function weatherLocation(location){
         method: "GET"
     }).then(function(response){ 
         console.log(response);
+
         
     })
         
@@ -121,5 +122,6 @@ $("#search-button").on("click", function(event){
       }
       weatherLocation(location)
       $("#movie-search").val("");
+      var temperature = $("<p>" + "temperature: " + response.main.temp + "&#176" + "F" + "<p>")
 })
 
