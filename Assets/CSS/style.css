@@ -5,6 +5,10 @@ html, body {
     background-image: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/bright_squares.png")
     
 }
+#weatherIcon {
+    background-color: lightblue;
+    border-radius: 50%;
+}
 
 h1 {
     text-align: center;
