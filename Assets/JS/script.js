@@ -91,30 +91,33 @@ function getMovieImages() {
 
 
 function weatherLocation(location) {
-    var APIkey = "4971bbf933e132e86212d1bc1c100553";
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + APIkey;
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response);
-
-
-    })
-
-
+    
+    
 }
 $("#search-button").on("click", function (event) {
     event.stopPropagation();
-
+    
     if ($("#movie-search").val() === "") {
         return;
     } else {
         var location = $("#movie-search").val().trim();
-        console.log(location);
+        var APIkey = "4971bbf933e132e86212d1bc1c100553";
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&units=imperial&appid=" + APIkey;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            var main = $("<p>" + "Current weather condition: " + response.weather[0].main + "<p>");
+            $("#searchLocation").append(main)
+            var temperature = $("<p>" + "temperature: " + response.main.temp + "&#176" + "F" + "<p>");
+            $("#searchLocation").append(temperature)
+        
+            
+        })
+        
     }
-    weatherLocation(location)
+    
     $("#movie-search").val("");
-    var temperature = $("<p>" + "temperature: " + response.main.temp + "&#176" + "F" + "<p>");
 });
 
