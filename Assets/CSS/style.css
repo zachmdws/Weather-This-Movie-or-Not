@@ -3,6 +3,7 @@ html, body {
     padding: 0;
     height: 100vh;
     background-image: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/bright_squares.png")
+    
 }
 
 h1 {
@@ -12,12 +13,19 @@ h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 30px;
     color: white !important;
+    @import url('//fonts.googleapis.com/css?family=Pacifico&text=Pure');
+    @import url('//fonts.googleapis.com/css?family=Roboto:700&text=css');
+    @import url('//fonts.googleapis.com/css?family=Kaushan+Script&text=!')
 }
 
 h2 {
     font-size: 2em;
     margin-left: .5rem;
     color: steelblue;
+}
+
+#weatherResults {
+    float: right;
 }
 
 input {
