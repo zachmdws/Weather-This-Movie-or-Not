@@ -10,8 +10,8 @@ h1 {
     padding: 1.5rem;
     background-color: rgb(131, 125, 168);
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: steelblue;
     border-radius: 30px;
+    color: white !important;
 }
 
 h2 {
@@ -41,5 +41,5 @@ button {
 }
 
 .nighttime {
-    
+
 }
