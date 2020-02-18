@@ -2,18 +2,21 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    background-image: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/bright_squares.png")
 }
 
 h1 {
     text-align: center;
-    padding: .5rem;
-    background-color: grey;
-    color: honeydew;
+    padding: 1.5rem;
+    background-color: rgb(131, 125, 168);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: steelblue;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 2em;
     margin-left: .5rem;
+    color: steelblue;
 }
 
 input {
@@ -23,7 +26,7 @@ input {
 
 button {
     padding: .5rem;
-    background-color: grey;
+    background-color: rgb(131, 125, 168);
     border-radius: 6px;
     font-size: .75em;
 }
