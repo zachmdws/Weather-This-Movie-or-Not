@@ -11,6 +11,7 @@ h1 {
     background-color: rgb(131, 125, 168);
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: steelblue;
+    border-radius: 30px;
 }
 
 h2 {
@@ -30,3 +31,28 @@ button {
     border-radius: 6px;
     font-size: .75em;
 }
+
+.daytime {
+
+}
+
+.nighttime {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
