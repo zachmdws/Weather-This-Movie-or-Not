@@ -1,5 +1,5 @@
 
-// getLocation();
+getLocation();
 
 function getLocation() {
 
@@ -22,21 +22,31 @@ function getWeather(position) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        var weather = (response.weather[0].main);
-        var icon = (response.weather[0].icon);
+        var main = $("<p>" + "Current weather condition: " + response.weather[0].main + "<p>");
+        $("#searchLocation").append(main)
+        var weatherImage = (response.weather[0].icon);
+        var searchedIcon = $("<img id='weatherIcon' src='http://openweathermap.org/img/wn/" + weatherImage+ "@2x.png'>");
+        $("#searchLocation").append(searchedIcon)
+        var temperature = $("<p>" + "temperature: " + response.main.temp + "&#176" + "F" + "<p>");
+        $("#searchLocation").append(temperature)
 
-        if (response.weather[0].icon) {
-            icon = ("<img id='weatherIcon' src='http://openweathermap.org/img/wn/" + icon + "@2x.png");
-        }
+
+        // var weather = (response.weather[0].main);
+        // var icon = (response.weather[0].icon);
+
+        // if (response.weather[0].icon) {
+        //     icon = ("<img id='weatherIcon' src='http://openweathermap.org/img/wn/" + icon + "@2x.png");
+        // }
 
         console.log(response);
         console.log(weather);
     })
+}
 
-function getLocation() { 
+function getLocation() {
 
-    if(navigator.geolocation) { 
-        
+    if (navigator.geolocation) {
+
         navigator.geolocation.getCurrentPosition(getWeather);
 
     }
@@ -75,26 +85,9 @@ function getMovieImages() {
 
             var carouselItems = $("<div class= 'item-" + i + "'></div>");
             var carouselImages = $("<img class='img-" + i + "' src='" + finishedP + "'></img>");
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).then(function (response) {
-            console.log(response);
-            
-            for (var i = 0; i < 20; i++) {
-                var posterP = (response.results[i].poster_path);
-                var mainL = ("https://image.tmdb.org/t/p/original/");
-                var movieImages = [];
-                var finishedP = mainL + posterP;
-
-            console.log()
-
             carouselDemoDiv.append(carouselItems);
             carouselItems.append(carouselImages);
-                $(".img-" + i).attr("src", finishedP);
-                
-                
-
+            $(".img-" + i).attr("src", finishedP);
 
         }
         bulmaCarousel.attach('#carousel-demo', {
@@ -103,62 +96,41 @@ function getMovieImages() {
         });
     })
 };
-            
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function weatherLocation(location){
-    var APIkey = "4971bbf933e132e86212d1bc1c100553";
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q="+location+"&appid="+APIkey;
-    $.ajax({
-        url:queryURL,
-        method: "GET"
-    }).then(function(response){ 
-        console.log(response);
-        
-    })
-        
-
+function weatherLocation(location) {
+    
+    
 }
-$("#search-button").on("click", function(event){
+$("#search-button").on("click", function (event) {
     event.stopPropagation();
     
     if ($("#movie-search").val() === "") {
         return;
-      } else {
+    } else {
         var location = $("#movie-search").val().trim();
-        console.log(location);
-      }
-      weatherLocation(location)
-      $("#movie-search").val("");
-})
+        var APIkey = "4971bbf933e132e86212d1bc1c100553";
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&units=imperial&appid=" + APIkey;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            var main = $("<p>" + "Current weather condition: " + response.weather[0].main + "<p>");
+            $("#searchLocation").append(main)
+            var weatherImage = (response.weather[0].icon);
+            var searchedIcon = $("<img id='weatherIcon' src='http://openweathermap.org/img/wn/" + weatherImage+ "@2x.png'>");
+            $("#searchLocation").append(searchedIcon)
+            var temperature = $("<p>" + "temperature: " + response.main.temp + "&#176" + "F" + "<p>");
+            $("#searchLocation").append(temperature)
+        
+            
+        })
+        
+    }
+    
+    $("#movie-search").val("");
+});
 
+// this is a test
