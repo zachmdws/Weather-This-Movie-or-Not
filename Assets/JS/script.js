@@ -16,7 +16,7 @@ function getWeather(position) {
 
     var APIkey = "4971bbf933e132e86212d1bc1c100553";
 
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + APIkey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + APIkey;
 
     $.ajax({
         url: queryURL,
@@ -54,10 +54,9 @@ function getLocation() {
 
 getMovieImages();
 function getMovieImages() {
-
-    var test = [14];
+    var chosen = [14];
     var key = "cee31e4e0a700ed1066486f86f4ae8b4";
-    var queryURL = "https://api.themoviedb.org/3/discover/movie?api_key=" + key + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=" + test;
+    var queryURL = "https://api.themoviedb.org/3/discover/movie?api_key=" + key + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=" + chosen;
     console.log(queryURL);
 
     $.ajax({
@@ -129,7 +128,7 @@ $("#search-button").on("click", function (event) {
         })
         
     }
-    
+    $("#searchLocation").html("");
     $("#movie-search").val("");
 });
 
