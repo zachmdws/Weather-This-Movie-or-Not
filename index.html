@@ -11,7 +11,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.css">
-
     <link rel="stylesheet" href="Assets/CSS/style.css">
 </head>
 
@@ -22,68 +21,82 @@
                 Weather This Movie or Not
             </h1>
             <div class="h-100">
-                <div class="col-sm-4 bg-secondary">
-                    <h2> Search for a movie!</h2>
-                    <input type="text" id="movie-search" placeholder="Enter movie name">
-                    <button id="search-button"><i class="fas fa-search"></i></button>
-                    <ul id="movies"></ul>
-                </div>
-
-                <section class="section">
-                    <div class="container">
-                        <!-- Start Carousel -->
-                        <div id="carousel-demo" class="carousel">
-                            <div class="item-0">
-                                <img class="img-0" src="" alt="">
-                            </div>
-                            <div class="item-1">
-                                <!-- Slide Content -->
-                                <img class="img-1" src="" alt="">
-                            </div>
-                            <div class="item-2">
-                                <!-- Slide Content -->
-                                <img class="img-2" src="" alt="">
-                            </div>
-                            <div class="item-3">
-                                <img class="img-3" src="" alt="">
-                            </div>
-                            <div class="item-4">
-                                <!-- Slide Content -->
-                                <img class="img-4" src="" alt="">
-                            </div>
-                            <div class="item-5">
-                                <!-- Slide Content -->
-                                <img class="img-5" src="" alt="">
-                            </div>
-                            <div class="item-6">
-                                <img class="img-6" src="" alt="">
-                            </div>
-                            <div class="item-7">
-                                <!-- Slide Content -->
-                                <img class="img-7" src="" alt="">
-                            </div>
-                            <div class="item-8">
-                                <!-- Slide Content -->
-                                <img class="img-8" src="" alt="">
-                            </div>
-                            <div class="item-9">
-                                <img class="img-9" src="" alt="">
-                            </div>
-                            <div class="item-10">
-                                <!-- Slide Content -->
-                                <img class="img-10" src="" alt="">
-                            </div>
-                            <div class="item-11">
-                                <!-- Slide Content -->
-                                <img class="img-11" src="" alt="">
-                            </div>
-                            <!-- End Carousel -->
+    
+                
+                <div class="columns">
+                    <div class="column is-two-fifths">
+                        <div class="col-sm-4 bg-secondary">
+                            <h2> Search for a city!</h2>
+                            <input type="text" id="movie-search" placeholder="Enter city name">
+                            <button id="search-button"><i class="fas fa-search"></i></button>
+                            <ul id="movies"></ul>
                         </div>
-                </section>
+                    </div>
+                    <div class="column">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores quasi facere officia corrupti impedit vitae, ad voluptates quam ea, tenetur laborum sed alias molestiae ipsa inventore enim aspernatur quos porro.</div>
+                    <div class="column">Auto</div>
+                  </div>
+                <body>
+                    <section class="section">
+                        <div class="container">
+                            <!-- Start Carousel -->
+                            <div id="carousel-demo" class="carousel">
+                                <div class="item-0">
+                                    <img class="img-0" src="" alt="">
+                                </div>
+                                <div class="item-1">
+                                    <!-- Slide Content -->
+                                    <img class="img-1" src="" alt="">
+                                </div>
+                                <div class="item-2">
+                                    <!-- Slide Content -->
+                                    <img class="img-2" src="" alt="">
+                                </div>
+                                <div class="item-3">
+                                    <img class="img-3" src="" alt="">
+                                </div>
+                                <div class="item-4">
+                                    <!-- Slide Content -->
+                                    <img class="img-4" src="" alt="">
+                                </div>
+                                <div class="item-5">
+                                    <!-- Slide Content -->
+                                    <img class="img-5" src="" alt="">
+                                </div>
+                                <div class="item-6">
+                                    <img class="img-6" src="" alt="">
+                                </div>
+                                <div class="item-7">
+                                    <!-- Slide Content -->
+                                    <img class="img-7" src="" alt="">
+                                </div>
+                                <div class="item-8">
+                                    <!-- Slide Content -->
+                                    <img class="img-8" src="" alt="">
+                                </div>
+                                <div class="item-9">
+                                    <img class="img-9" src="" alt="">
+                                </div>
+                                <div class="item-10">
+                                    <!-- Slide Content -->
+                                    <img class="img-10" src="" alt="">
+                                </div>
+                                <div class="item-11">
+                                    <!-- Slide Content -->
+                                    <img class="img-11" src="" alt="">
+                                </div>
+                                <!-- End Carousel -->
+                            </div>
+                    </section>
+    </section>
+    <div class="col-sm-7">
+        <main id="content-main"></main>
+        <div class="container-fluid">
+            <div id="movie-results" class="columns">
             </div>
         </div>
-        </div>
-        </div>
+    </div>
+    </div>
+    </div>
     </section>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
