@@ -1,5 +1,5 @@
 
-// getLocation();
+getLocation();
 
 function getLocation() {
 
@@ -22,12 +22,21 @@ function getWeather(position) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        var weather = (response.weather[0].main);
-        var icon = (response.weather[0].icon);
+        var main = $("<p>" + "Current weather condition: " + response.weather[0].main + "<p>");
+        $("#searchLocation").append(main)
+        var weatherImage = (response.weather[0].icon);
+        var searchedIcon = $("<img id='weatherIcon' src='http://openweathermap.org/img/wn/" + weatherImage+ "@2x.png'>");
+        $("#searchLocation").append(searchedIcon)
+        var temperature = $("<p>" + "temperature: " + response.main.temp + "&#176" + "F" + "<p>");
+        $("#searchLocation").append(temperature)
 
-        if (response.weather[0].icon) {
-            icon = ("<img id='weatherIcon' src='http://openweathermap.org/img/wn/" + icon + "@2x.png");
-        }
+
+        // var weather = (response.weather[0].main);
+        // var icon = (response.weather[0].icon);
+
+        // if (response.weather[0].icon) {
+        //     icon = ("<img id='weatherIcon' src='http://openweathermap.org/img/wn/" + icon + "@2x.png");
+        // }
 
         console.log(response);
         console.log(weather);
@@ -110,6 +119,9 @@ $("#search-button").on("click", function (event) {
             console.log(response);
             var main = $("<p>" + "Current weather condition: " + response.weather[0].main + "<p>");
             $("#searchLocation").append(main)
+            var weatherImage = (response.weather[0].icon);
+            var searchedIcon = $("<img id='weatherIcon' src='http://openweathermap.org/img/wn/" + weatherImage+ "@2x.png'>");
+            $("#searchLocation").append(searchedIcon)
             var temperature = $("<p>" + "temperature: " + response.main.temp + "&#176" + "F" + "<p>");
             $("#searchLocation").append(temperature)
         
