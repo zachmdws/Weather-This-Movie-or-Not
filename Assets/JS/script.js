@@ -133,3 +133,4 @@ $("#search-button").on("click", function (event) {
     $("#movie-search").val("");
 });
 
+// this is a test
