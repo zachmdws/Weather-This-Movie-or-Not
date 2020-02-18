@@ -133,4 +133,33 @@ function getLocation() {
 
     }
 
+    getMovieImages();
+    function getMovieImages() {
 
+        var test = [14];
+        var key = "cee31e4e0a700ed1066486f86f4ae8b4";
+        var queryURL = "https://api.themoviedb.org/3/discover/movie?api_key=" + key + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=" + test;
+        console.log(queryURL);
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+
+            for (var i = 0; i < 12; i++) {
+                var posterP = (response.results[i].poster_path);
+                var mainL = ("https://image.tmdb.org/t/p/original/");
+                var movieImages = [];
+                var finishedP = mainL + posterP;
+
+                movieImages.push(finishedP);
+
+                $(".img-" + i).attr("src", finishedP);
+
+
+            }
+        })};
+
+        bulmaCarousel.attach('#carousel-demo', {
+            slidesToScroll: 1,
+            slidesToShow: 6 });
