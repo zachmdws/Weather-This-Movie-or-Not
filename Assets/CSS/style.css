@@ -17,9 +17,7 @@ h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 30px;
     color: white !important;
-    @import url('//fonts.googleapis.com/css?family=Pacifico&text=Pure');
-    @import url('//fonts.googleapis.com/css?family=Roboto:700&text=css');
-    @import url('//fonts.googleapis.com/css?family=Kaushan+Script&text=!')
+    
 }
 
 h2 {
@@ -46,6 +44,7 @@ button {
 
 .item-0, .item-1, .item-2, .item-3, .item-4, .item-5, .item-6, .item-7, .item-8, .item-9, .item-10, .item-11, .item-12{
     margin: 10px
+
 }
 
 /* .daytime {
@@ -55,3 +54,15 @@ button {
 .nighttime {
 
 } */
+.knockout {
+    background: url(http://apod.nasa.gov/apod/image/0603/coma_misti.jpg) -80px -80px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: bold;
+    font-size: 45px;
+    font-family: arial, helvetica;
+    width: 50%;
+    margin: 25px auto;
+    text-align: center;
+  }
+  
