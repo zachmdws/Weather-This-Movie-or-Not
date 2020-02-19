@@ -1,6 +1,7 @@
 # Weather-This-Movie-or-Not
 
-![Photo of finished Product] ()
+![Photo of finished Product] (Assets/images/fin.png)
+
 [Deployed Website] https://zachmdws.github.io/Weather-This-Movie-or-Not/.
 
 * When the user opens the page, it will load with their current location.
