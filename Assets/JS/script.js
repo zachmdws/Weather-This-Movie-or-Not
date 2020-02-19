@@ -82,7 +82,6 @@ function getMovieImages(marry) {
         
         
     }
-
     var key = "cee31e4e0a700ed1066486f86f4ae8b4";
     var queryURL = "https://api.themoviedb.org/3/discover/movie?api_key=" + key + "&language=en-US&sort_by=popularity.desc&with_original_language=en&vote_average.lte=10&include_adult=false&include_video=false&page=1&with_genres=" + selection;
     
@@ -151,7 +150,6 @@ $("#search-button").on("click", function (event) {
     }
     $("#searchLocation").html("");
     $("#movie-search").val("");
-
 });
 
 $("section").on("click", "img", function () {
@@ -178,4 +176,3 @@ $("section").on("click", "img", function () {
     })
 
 })
-
