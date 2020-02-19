@@ -59,10 +59,10 @@ button {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     font-weight: bold;
-    font-size: 45px;
-    font-family: arial, helvetica;
+    font-size: 70px;
+    font-family: 'Coda Caption', sans-serif;
     width: 50%;
-    margin: 25px auto;
+    margin: 15px auto;
     text-align: center;
   }
   
