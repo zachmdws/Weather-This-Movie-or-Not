@@ -12,21 +12,21 @@ html, body {
 
 h1 {
     text-align: center;
-    padding: 1.5rem;
-    background-color: rgb(131, 125, 168);
+    margin-bottom: 2px;
     font-family: 'EB Garamond', serif;
     border-radius: 30px;
-    
 }
 
 h2 {
     font-family: 'EB Garamond', serif;
     font-size: 1.5em;
+    text-align: center;
 }
 
 input {
     font-size: 1.5em;
-    /* margin-left: .75rem; */
+    box-shadow: 6px 6px 15px 3px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease 0s;
 }
 
 .button {
@@ -47,11 +47,12 @@ input {
 #city {
     font-family: 'EB Garamond', serif;
     font-size: 1.5em;
+    box-shadow: -2px -2px 2px 1px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease 0s;
 }
 
 .item-0, .item-1, .item-2, .item-3, .item-4, .item-5, .item-6, .item-7, .item-8, .item-9, .item-10, .item-11, .item-12{
     margin: 10px
-
 }
 
 /* .daytime {
@@ -69,7 +70,22 @@ input {
     font-size: 45px;
     font-family: 'EB Garamond', serif;
     width: 50%;
-    margin: 25px auto;
+    margin: 15px auto;
     text-align: center;
   }
   
+  .pictures .launch {
+border: none;
+  }
+
+  .selectedMovie {
+    margin: auto;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 39%; 
+  }
+
+  .selectedTitle {
+      text-align: center;
+      font-size: 20px;
+  }
