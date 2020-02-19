@@ -53,9 +53,10 @@ function getLocation() {
     }
 }
 
+
 // getMovieImages();
 function getMovieImages(marry) {
-    $("container").empty();
+   $("container").empty();
     var chosen = marry;
     switch (chosen) {
         case "Clouds":
