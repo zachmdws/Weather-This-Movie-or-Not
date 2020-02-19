@@ -137,31 +137,10 @@ function getMovieImages(marry) {
         
     })
 };
-            
+ // function weatherLocation(location) {
 
 
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-function weatherLocation(location) {
-
-
-}
+// }
 $("#search-button").on("click", function (event) {
     event.stopPropagation();
 
