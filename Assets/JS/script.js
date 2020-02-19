@@ -59,10 +59,29 @@ function getMovieImages(marry) {
     switch (chosen) {
         case "Clouds":
             var selection = [18, 80];
+            // crime, drama
+            break;
+        case "Thunderstorm":
+            var selection = [53, 27];
+            // thriller, horror
+            break;
+        case "Clear":
+            var selection = [35,14,16];
+            // comedy, fantasy, adventure
+            break;
+        case "Snow":
+            var selection = [27,878]
+            // horror, science fiction
             break;
         case "Rain":
-            var selection = [53, 27];
+            var selection = [10749,]
+            // romance
             break;
+        case "Drizzle":
+            var selection = [10749,]
+            // romance
+            break;
+        
     }
 
 
