@@ -54,6 +54,7 @@ function getLocation() {
 
 getMovieImages();
 function getMovieImages() {
+    $("container").empty();
     var chosen = [14];
     var key = "cee31e4e0a700ed1066486f86f4ae8b4";
     var queryURL = "https://api.themoviedb.org/3/discover/movie?api_key=" + key + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=" + chosen;
@@ -66,13 +67,13 @@ function getMovieImages() {
 
 
         var carouselSection = $("<section class='section'></section");
-        var carouselContainer = $("<container></container");
+        var carouselContainer = $("<container></container>");
         var carouselDemoDiv = $("<div id='carousel-demo' class='carousel'></div>");
 
         $(".h-100").append(carouselSection);
         carouselSection.append(carouselContainer);
         carouselContainer.append(carouselDemoDiv);
-
+        console.log(response);
 
         for (var i = 0; i < 12; i++) {
             var posterP = (response.results[i].poster_path);
@@ -93,6 +94,7 @@ function getMovieImages() {
             slidesToScroll: 1,
             slidesToShow: 6
         });
+        
     })
 };
             
