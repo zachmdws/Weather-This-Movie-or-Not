@@ -14,32 +14,39 @@ h1 {
     text-align: center;
     padding: 1.5rem;
     background-color: rgb(131, 125, 168);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'EB Garamond', serif;
     border-radius: 30px;
-    color: white !important;
     
 }
 
 h2 {
-    font-size: 2em;
-    margin-left: .5rem;
-    color: steelblue;
-}
-
-#weatherResults {
-    float: right;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5em;
 }
 
 input {
     font-size: 1.5em;
-    margin-left: .75rem;
+    /* margin-left: .75rem; */
 }
 
-button {
-    padding: .5rem;
-    background-color: rgb(131, 125, 168);
-    border-radius: 6px;
+.button {
+    padding: 1rem;
+    background-color: #ADD8E6;
+    /* border-radius: 3px; */
     font-size: .75em;
+    margin-bottom: 1.3px;
+    box-shadow: 6px 6px 15px 3px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease 0s;
+}
+
+.button:hover {
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+#city {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5em;
 }
 
 .item-0, .item-1, .item-2, .item-3, .item-4, .item-5, .item-6, .item-7, .item-8, .item-9, .item-10, .item-11, .item-12{
@@ -60,7 +67,7 @@ button {
     -webkit-background-clip: text;
     font-weight: bold;
     font-size: 45px;
-    font-family: arial, helvetica;
+    font-family: 'EB Garamond', serif;
     width: 50%;
     margin: 25px auto;
     text-align: center;

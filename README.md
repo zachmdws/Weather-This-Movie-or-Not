@@ -1,7 +1,7 @@
 # Weather-This-Movie-or-Not
 
-![Photo of finished Product]
-[Deployed Website]
+![Photo of finished Product] ()
+[Deployed Website] https://zachmdws.github.io/Weather-This-Movie-or-Not/.
 
 * When the user opens the page, it will load with their current location.
 * The user will be able to type in a genre and 10 movies will generate based off of their choice and the weather outside.
