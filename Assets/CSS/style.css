@@ -81,3 +81,21 @@ border: none;
   .selectedImage {
 
   }
+  footer {
+    background-color: black; 
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  #footerContainerMain {
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      width: 46%;
+      
+  }
+  a {
+      padding: 25px;
+  }
