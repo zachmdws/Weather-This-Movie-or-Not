@@ -1,6 +1,4 @@
-
 getLocation();
-
 function getLocation() {
 
     if (navigator.geolocation) {
@@ -53,8 +51,6 @@ function getLocation() {
     }
 }
 
-
-// getMovieImages();
 function getMovieImages(marry) {
    $(".pictures").remove();
     var chosen = marry;
@@ -68,52 +64,40 @@ function getMovieImages(marry) {
             // thriller, horror
             break;
         case "Clear":
-            var selection = [35,14,16];
-            // comedy, fantasy, adventure
+            var selection = [35,878,12];
+            // comedy, sci-fi, adventure
             break;
         case "Snow":
             var selection = [27,878]
             // horror, science fiction
             break;
         case "Rain":
-            var selection = [10749,]
-            // romance
+            var selection = [10752,36]
+            // war, history
             break;
         case "Drizzle":
-            var selection = [10749,]
-            // romance
+            var selection = [10749]
+            // romance,
             break;
+        
         
     }
 
-
-    // if (chosen = "Clouds") {
-    //     selection = [18, 80]
-    // }
-    // if (chosen)
-        console.log(chosen);
-
     var key = "cee31e4e0a700ed1066486f86f4ae8b4";
-    var queryURL = "https://api.themoviedb.org/3/discover/movie?api_key=" + key + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=" + selection;
-    console.log(queryURL);
-
-
+    var queryURL = "https://api.themoviedb.org/3/discover/movie?api_key=" + key + "&language=en-US&sort_by=popularity.desc&with_original_language=en&vote_average.lte=10&include_adult=false&include_video=false&page=1&with_genres=" + selection;
+    
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log(response);
-
-
-        var carouselSection = $("<section class='pictures'></section");
-        var carouselContainer = $("<container></container>");
+        var carouselSection = $("<div class='pictures'></div");
+        var carouselContainer = $("<div class='container'></div>");
         var carouselDemoDiv = $("<div id='carousel-demo' class='carousel'></div>");
 
         $(".h-100").append(carouselSection);
         carouselSection.append(carouselContainer);
         carouselContainer.append(carouselDemoDiv);
-        console.log(response);
-
+        
         for (var i = 0; i < 12; i++) {
             var posterP = (response.results[i].poster_path);
             var mainL = ("https://image.tmdb.org/t/p/original/");
@@ -133,13 +117,11 @@ function getMovieImages(marry) {
             slidesToScroll: 1,
             slidesToShow: 6
         });
+        console.log(response);
         
     })
 };
- // function weatherLocation(location) {
-
-
-// }
+ 
 $("#search-button").on("click", function (event) {
     event.stopPropagation();
 
@@ -169,6 +151,7 @@ $("#search-button").on("click", function (event) {
     }
     $("#searchLocation").html("");
     $("#movie-search").val("");
+
 });
 
 $("section").on("click", "img", function () {
@@ -195,4 +178,4 @@ $("section").on("click", "img", function () {
     })
 
 })
-// this is a test
+
