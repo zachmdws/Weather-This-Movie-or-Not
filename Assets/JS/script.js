@@ -117,13 +117,13 @@ function getMovieImages(marry) {
         for (var i = 0; i < 12; i++) {
             var posterP = (response.results[i].poster_path);
             var mainL = ("https://image.tmdb.org/t/p/original/");
-            var movieImages = [];
+            var movieID = (response.results[i].id);
             var finishedP = mainL + posterP;
 
-            movieImages.push(finishedP);
+            
 
             var carouselItems = $("<div class= 'item-" + i + "'></div>");
-            var carouselImages = $("<img class='img-" + i + "' src='" + finishedP + "'></img>");
+            var carouselImages = $("<img id='"+ movieID + "' class='img-" + i + "' src='" + finishedP + "'></img>");
             carouselDemoDiv.append(carouselItems);
             carouselItems.append(carouselImages);
             $(".img-" + i).attr("src", finishedP);
@@ -171,4 +171,28 @@ $("#search-button").on("click", function (event) {
     $("#movie-search").val("");
 });
 
+$("section").on("click", "img", function () {
+    var movieID = $(this).attr("id");
+    var key = "cee31e4e0a700ed1066486f86f4ae8b4";
+    var queryURL = "https://api.themoviedb.org/3/movie/" + movieID + "?api_key=" + key;
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        var chosenOne = $("<div class='selectedMovie'></div>");
+        var chosenTitle = $("<h1 class='selectedTitle'>" + response.title + "</h1>");
+        var chosenImg = $("<img class ='selectedImage' src='https://image.tmdb.org/t/p/w500/" + (response.poster_path) + "'>");
+        var chosenDesc = $("<p class='selectedDesc'>" + response.overview + "</p>");
+        // console.log($(this));
+
+        $(".selectedMovie").empty();
+
+        $(".pictures").append(chosenOne);
+        chosenOne.append(chosenTitle);
+        chosenTitle.append(chosenImg);
+        chosenTitle.append(chosenDesc);
+    })
+
+})
 // this is a test
