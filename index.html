@@ -9,28 +9,33 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.css">
     <link rel="stylesheet" href="Assets/CSS/style.css">
+
 </head>
 
 <body>
     <section class="section">
         <div class="container" id="titleContainer">
             <h1 class="title knockout">
-                
                 Weather This Movie or Not
             </h1>
             <div class="h-100">
                 <div class="columns">
                     <div class="column is-two-fifths">
                         <div class="col-sm-4 bg-secondary">
+
                             <h2> Search for a city!</h2>
                             <input type="text" id="movie-search" placeholder="Enter city name">
-                            <button id="search-button"><i class="fas fa-search"></i></button>
+                            <!-- <span><button id="search-button"><i class="fas fa-search"></i></button></span> -->
+                            <span>
+                                <div class="button" id="search-button"><i class="fas fa-search"></i></div>
+                            </span>
                             <ul id="movies"></ul>
                         </div>
                     </div>
                     <div class="column" id="searchLocation">
                     </div>
-                    <div class="column">Start by searching your current city. Based off of the weather of your city, you
+                    <div id="city" class="column">Start by searching your current city. Based off of the weather of your
+                        city, you
                         will be given a choice of movies!</div>
                 </div>
     </section>
