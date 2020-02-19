@@ -56,7 +56,7 @@ function getLocation() {
 
 // getMovieImages();
 function getMovieImages(marry) {
-   $("container").empty();
+   $(".pictures").remove();
     var chosen = marry;
     switch (chosen) {
         case "Clouds":
@@ -106,7 +106,7 @@ function getMovieImages(marry) {
         console.log(response);
 
 
-        var carouselSection = $("<section class='section'></section");
+        var carouselSection = $("<section class='pictures'></section");
         var carouselContainer = $("<container></container>");
         var carouselDemoDiv = $("<div id='carousel-demo' class='carousel'></div>");
 
