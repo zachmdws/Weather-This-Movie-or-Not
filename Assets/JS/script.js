@@ -89,6 +89,7 @@ function getMovieImages(marry) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
+        $(".col-sm-7").css("min-height", "0px")
         var carouselSection = $("<div class='pictures'></div");
         var carouselContainer = $("<div class='container'></div>");
         var carouselDemoDiv = $("<div id='carousel-demo' class='carousel'></div>");
