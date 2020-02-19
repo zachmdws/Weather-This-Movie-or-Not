@@ -22,15 +22,16 @@ function getWeather(position) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
+        var marry = response.weather[0].main
         var main = $("<p>" + "Current weather condition: " + response.weather[0].main + "<p>");
         $("#searchLocation").append(main)
         var weatherImage = (response.weather[0].icon);
-        var searchedIcon = $("<img id='weatherIcon' src='http://openweathermap.org/img/wn/" + weatherImage+ "@2x.png'>");
+        var searchedIcon = $("<img id='weatherIcon' src='http://openweathermap.org/img/wn/" + weatherImage + "@2x.png'>");
         $("#searchLocation").append(searchedIcon)
         var temperature = $("<p>" + "temperature: " + response.main.temp + "&#176" + "F" + "<p>");
         $("#searchLocation").append(temperature)
 
-
+        getMovieImages(marry)
         // var weather = (response.weather[0].main);
         // var icon = (response.weather[0].icon);
 
@@ -52,18 +53,55 @@ function getLocation() {
     }
 }
 
-getMovieImages();
-function getMovieImages() {
+// getMovieImages();
+function getMovieImages(marry) {
     $("container").empty();
-    var chosen = [14];
+    var chosen = marry;
+    switch (chosen) {
+        case "Clouds":
+            var selection = [18, 80];
+            // crime, drama
+            break;
+        case "Thunderstorm":
+            var selection = [53, 27];
+            // thriller, horror
+            break;
+        case "Clear":
+            var selection = [35,14,16];
+            // comedy, fantasy, adventure
+            break;
+        case "Snow":
+            var selection = [27,878]
+            // horror, science fiction
+            break;
+        case "Rain":
+            var selection = [10749,]
+            // romance
+            break;
+        case "Drizzle":
+            var selection = [10749,]
+            // romance
+            break;
+        
+    }
+
+
+    // if (chosen = "Clouds") {
+    //     selection = [18, 80]
+    // }
+    // if (chosen)
+        console.log(chosen);
+
     var key = "cee31e4e0a700ed1066486f86f4ae8b4";
-    var queryURL = "https://api.themoviedb.org/3/discover/movie?api_key=" + key + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=" + chosen;
+    var queryURL = "https://api.themoviedb.org/3/discover/movie?api_key=" + key + "&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=" + selection;
     console.log(queryURL);
+
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
+        console.log(response);
 
 
         var carouselSection = $("<section class='section'></section");
@@ -119,12 +157,12 @@ function getMovieImages() {
 
 
 function weatherLocation(location) {
-    
-    
+
+
 }
 $("#search-button").on("click", function (event) {
     event.stopPropagation();
-    
+
     if ($("#movie-search").val() === "") {
         return;
     } else {
@@ -136,17 +174,18 @@ $("#search-button").on("click", function (event) {
             method: "GET"
         }).then(function (response) {
             console.log(response);
+            var marry = response.weather[0].main
             var main = $("<p>" + "Current weather condition: " + response.weather[0].main + "<p>");
             $("#searchLocation").append(main)
             var weatherImage = (response.weather[0].icon);
-            var searchedIcon = $("<img id='weatherIcon' src='http://openweathermap.org/img/wn/" + weatherImage+ "@2x.png'>");
+            var searchedIcon = $("<img id='weatherIcon' src='http://openweathermap.org/img/wn/" + weatherImage + "@2x.png'>");
             $("#searchLocation").append(searchedIcon)
             var temperature = $("<p>" + "temperature: " + response.main.temp + "&#176" + "F" + "<p>");
             $("#searchLocation").append(temperature)
-        
-            
+
+            getMovieImages(marry)
         })
-        
+
     }
     $("#searchLocation").html("");
     $("#movie-search").val("");
