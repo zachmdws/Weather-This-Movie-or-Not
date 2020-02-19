@@ -176,4 +176,3 @@ $("section").on("click", "img", function () {
     })
 
 })
-// this is a test
