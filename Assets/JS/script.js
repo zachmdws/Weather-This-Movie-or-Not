@@ -64,22 +64,24 @@ function getMovieImages(marry) {
             // thriller, horror
             break;
         case "Clear":
-            var selection = [35,878,12];
+            var selection = [35,878];
             // comedy, sci-fi, adventure
             break;
         case "Snow":
-            var selection = [27,878]
+            var selection = [27,878];
             // horror, science fiction
             break;
         case "Rain":
-            var selection = [10752,36]
+            var selection = [10752,36];
             // war, history
             break;
         case "Drizzle":
-            var selection = [10749]
+            var selection = [10749];
             // romance,
             break;
-        
+        default:
+            var selection = [12,35];
+
         
     }
     var key = "cee31e4e0a700ed1066486f86f4ae8b4";
