@@ -1,6 +1,6 @@
 # Weather-This-Movie-or-Not
 
-![Photo of finished Product] (Assets/images/fin.png)
+![Photo of finished Product](Assets/images/fin.png)
 
 [Deployed Website] https://zachmdws.github.io/Weather-This-Movie-or-Not/.
 
